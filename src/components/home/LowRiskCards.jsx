@@ -45,13 +45,19 @@ export default function LowRiskCards({data}) {
             key={campaing?.id}
           >
             <div className="rounded-xl border border-indigo-100 h-full ">
-              <Image
+             <div className='relative'>
+               <Image
                 width={280}
                 height={170}
                 className="h-[170px] w-full object-cover rounded-t-xl"
                 src={campaing?.image}
                 alt={campaing?.title}
               />
+              <div className='absolute bottom-3 left-3 flex rounded-sm overflow-hidden bg-white/0'>
+                 <p className='bg-white text-gray-700 col-span-2 px-1 pt-1 text-[6px]'>RISK <br /> GRADE</p>
+                 <p className='bg-orange-400 text-white col-span-1 px-1 pt-1 text-sm'>{campaing?.grade}</p>
+              </div>
+             </div>
               <div className='p-2'>
                 <p className='text-sm'>{campaing?.title}</p>
                 <p className='text-sm'><span className='font-bold text-base'>{campaing?.anualizedReturn}</span> annualized return</p>
