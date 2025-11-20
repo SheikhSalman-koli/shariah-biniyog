@@ -88,7 +88,7 @@ export default function OnGoingCamp() {
  
 
     return (
-        <div className="max-w-xl mx-auto p-4 sm:p-6">
+        <div className="max-w-xl mx-auto px-4 pt-4 ">
             <div className="space-y-4 mb-5">
                 {onGoing.map(camp => {
                     const riskColors = getRiskGradeColors(camp?.riskGrade)
@@ -165,14 +165,14 @@ export default function OnGoingCamp() {
             </div>
 
             {/* increment and decrement button */}
-            <div className='sticky bottom-12 w-full max-w-xl mx-auto bg-white border-t-4 border border-indigo-500 rounded-t-2xl z-20 px-3 py-6 space-y-5'>
+            <div className='sticky bottom-12 w-full max-w-xl mx-auto bg-white border-t-4 border border-indigo-500 rounded-t-2xl z-20 px-3 py-4 space-y-3'>
                 <p className='text-center text-sm text-gray-800'>The amount you would like to invest?</p>
             <div className='grid grid-cols-3 gap-4 mg:gap-8'>
                 {/* decrement */}
                 <button 
                 disabled={amount === 5}
                 onClick={()=> setAmount(amount - 10)}
-                className={`flex items-center gap-2 rounded-3xl bg-indigo-600 text-white px-3 py-1 ${amount === 5 && 'cursor-not-allowed'}`}>
+                className={`flex justify-center items-center gap-2 rounded-3xl text-white px-3 py-1 hover:bg-indigo-700 ${amount === 5 ? 'cursor-not-allowed bg-indigo-300': 'bg-indigo-600'} `}>
                     <MinusCircle size={15}/>
                     10K
                 </button>
@@ -183,7 +183,7 @@ export default function OnGoingCamp() {
                 {/* increment */}
                 <button 
                 onClick={()=> setAmount(amount + 10)}
-                className='flex items-center gap-2 rounded-3xl bg-indigo-600 text-white px-3 py-1'>
+                className='flex justify-center items-center gap-2 rounded-3xl bg-indigo-600 text-white px-3 py-1 hover:bg-indigo-700'>
                     <PlusCircle size={15}/>
                     10K
                 </button>
